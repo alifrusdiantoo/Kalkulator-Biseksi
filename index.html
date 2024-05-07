@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator - Metode Biseksi</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+  </head>
+
+  <body onload="tampilInput()">
+    <nav>
+      <div class="logo">KELOMPOK 2C</div>
+      <ul>
+        <li><a href="#d">Definisi</a></li>
+        <li><a href="#k">Kalkulator</a></li>
+        <li><a href="#t">Tentang kami</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="definisi" id="d">
+        <h1>Kalkulator</h1>
+        <h3>Metode Biseksi</h3>
+        <p class="d">Metode Biseksi (Bisection method) adalah suatu metode yang digunakan untuk mencari akar dari suatu persamaan. Kalkulator Metode Biseksi dapat membantu dalam perhitungan Metode Biseksi.</p>
+        <h4>How to Use?</h4>
+        <p class="l">
+          1. Masukkan input yang diperlukan untuk menghitung metode biseksi. <br />
+          2. Klik ‘CALCULATE” untuk melakukan perhitungan, dan klik ‘CLEAR’ apabila ingin menghapus semua input yang sudah dimasukkan. <br />
+          3. Hasil akan muncul tepat dibawah kalkulator. <br />
+        </p>
+      </div>
+
+      <!-- Section Kalkulator -->
+      <div class="wrapper" id="k">
+        <div class="sec-kalkulator">
+          <h4 class="title-calculate">KALKULATOR</h4>
+          <p class="h2">Masukan Input yang diperlukan.</p>
+          <!-- Form Kalkulator -->
+          <form id="kalkulator">
+            <!-- Input pilih pangkat tertinggi -->
+            <div class="form-group">
+              <div class="label-control">
+                <label for="pangkat">Input Pangkat Tertinggi.</label>
+              </div>
+              <select id="pangkat" class="input-control" onchange="tampilInput()">
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7" selected>7</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <div class="label-control">
+                <label for="input-koe">Fungsi</label>
+              </div>
+              <div class="fungsi-group" id="input-koe"></div>
+            </div>
+
+            <div class="form-group">
+              <div class="label-control">
+                <label for="batas-atas">Interval Pencarian (Batas Atas)</label>
+              </div>
+              <input type="number" class="input-control" id="batas-atas" required />
+            </div>
+
+            <div class="form-group">
+              <div class="label-control">
+                <label for="batas-bawah">Interval Pencarian (Batas Bawah)</label>
+              </div>
+              <input type="number" class="input-control" id="batas-bawah" required />
+            </div>
+
+            <div class="form-group">
+              <div class="label-control">
+                <label for="error">Toleransi Kesalahan</label>
+              </div>
+              <input type="text" class="input-control" id="error" required />
+            </div>
+          </form>
+
+          <div class="btn-group">
+            <div class="btn-calculate">
+              <button class="btn-control" id="hitung" onclick="tampil()">Hitung</button>
+            </div>
+
+            <div class="btn-delete">
+              <button class="btn-control" onclick="resetForm()">Hapus</button>
+            </div>
+          </div>
+        </div>
+        <div class="graph">
+          <canvas id="chart"></canvas>
+        </div>
+      </div>
+      <section>
+        <h2>Tabel Hasil</h2>
+        <div class="tb-hasil" id="tabel"></div>
+      </section>
+    </main>
+    <section class="about-us">
+      <div class="t">
+        <h2 class="title-t" id="t">Tentang Kami</h2>
+        <p class="deskripsi-t">
+          Bisection method calculator atau kalkulator metode biseksi ini merupakan sebuah tugas project yang dikerjakan oleh kelompok 2 Kelas C Program Studi Informatika Universitas Siliwangi angkatan 2022. Berikut merupakan anggota
+          kelompok yang berkontribusi pada pengerjaan project ini :
+        </p>
+      </div>
+
+      <div class="anggota-t">
+        <div class="anggota">
+          <a class="profile" href="https://www.instagram.com/mysrlf_4/">
+            <div class="wrapper-img">
+              <img src="Assets/yusril2.jpg" alt="" />
+            </div>
+            <p><b>Muhammad Yusril Fauzi</b></p>
+            <p>227006067</p>
+          </a>
+
+          <a class="profile" href="https://www.instagram.com/alif.rusdianto/">
+            <div class="wrapper-img">
+              <img src="Assets/alif.jpg" alt="" />
+            </div>
+            <p><b>Alif Rusdianto</b></p>
+            <p>227006065</p>
+          </a>
+
+          <a class="profile" href="https://www.instagram.com/mkhanafi_/">
+            <div class="wrapper-img">
+              <img src="Assets/mukhlis.jpg" alt="" />
+            </div>
+            <p><b>Mukhlis Hanafi</b></p>
+            <p>227006070</p>
+          </a>
+        </div>
+
+        <div class="anggota">
+          <a class="profile" href="https://www.instagram.com/fajarn.ur/">
+            <div class="wrapper-img">
+              <img src="Assets/fajar.jpg" alt="" />
+            </div>
+            <p><b>Fajar Nurdiansyah</b></p>
+            <p>227006077</p>
+          </a>
+
+          <a class="profile" href="https://www.instagram.com/anzarrhmn/">
+            <div class="wrapper-img">
+              <img src="Assets/anzar.jpg" alt="" />
+            </div>
+            <p><b>Anzar Rahman Permana</b></p>
+            <p>227006082</p>
+          </a>
+
+          <a class="profile" href="https://www.instagram.com/yuldaan/">
+            <div class="wrapper-img">
+              <img src="Assets/yuldan.jpg" alt="" />
+            </div>
+            <p>
+              <b>Yuldan Nur Addinsyah</b>
+            </p>
+            <p>227006091</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p class="copyright">Made with <span>&hearts;</span> by Kelompok 2 C</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
