@@ -25,7 +25,7 @@ body::-webkit-scrollbar {
 }
 
 nav {
-  padding: 0 121px;
+  padding: 0 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -37,8 +37,9 @@ nav {
 }
 
 nav .logo {
+  font-family: 'Bricolage Grotesque', sans-serif;
   color: #ffffff;
-  font-size: 1rem;
+  font-size: 2rem;
   font-weight: bold;
 }
 
@@ -56,39 +57,38 @@ nav ul li a {
 }
 
 .definisi {
-  min-height: 55vh;
   margin: 100px;
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 60px;
   color: #1a4d2e;
 }
 
-h2 {
-  text-align: center;
+.definisi p {
+  margin: 2em 0 4em 0;
+}
+
+.sub-head {
+  color: #202020;
+}
+
+.secHowToUse {
   margin-top: 2em;
+}
+
+ol,
+li {
+  margin-left: 10px;
 }
 
 h3 {
   font-size: 30px;
-  margin-left: 3.5px;
   margin-bottom: 38px;
 }
 
 h4 {
-  margin-left: 3.5px;
   margin-bottom: 30px;
-}
-
-.d {
-  width: 900px;
-  margin-left: 3.5px;
-  margin-bottom: 40px;
-}
-
-.l {
-  margin-left: 3.5px;
 }
 
 .wrapper {
@@ -192,66 +192,53 @@ input::-webkit-inner-spin-button {
 }
 
 .btn-calculate .btn-control {
-  background-color: #259d38;
+  background-color: #1a4d2e;
   color: #ffffff;
 }
 
 .btn-delete .btn-control {
-  background-color: #e21212;
+  background-color: #b91818;
   color: #ffffff;
 }
 
 .graph {
   width: 100%;
+  margin: 2em;
 }
 
 canvas {
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  border: 1px dashed #202020;
+  border-radius: 15px;
 }
 
-.tb-hasil {
+.secTabelHasil {
+  margin: 2em;
   min-height: 45vh;
-  display: flex;
-  margin: 25px 25px;
-  border-radius: 20px;
-  padding: 25px 10px 25px 10px;
-  justify-content: center;
 }
 
-.tb-group {
-  height: 100%;
-  display: flex;
-  justify-content: flex-start;
+.secTabelHasil h2 {
+  margin-bottom: 1em;
 }
 
-.tr-control {
-  display: flex;
-  justify-content: flex-start;
-  text-align: justify;
-  border: 0.5px solid black;
-  box-sizing: border-box;
+table {
+  width: 100%;
+  border-collapse: collapse;
 }
 
-.tr-control-2 {
-  display: flex;
-  text-align: justify;
-}
-
+th,
+tr,
 td {
-  border: 0.5px solid black;
-  font-size: 12px;
-  text-align: justify;
-  padding: 2px;
+  border: 1px solid #202020;
 }
 
-td:first-child,
-th {
+td:first-child {
   text-align: center;
 }
 
-.th-control {
-  width: 185px;
+th {
+  background-color: #1a4d2e;
+  color: #ffffff;
 }
 
 section.about-us {

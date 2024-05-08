@@ -8,37 +8,48 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&display=swap" rel="stylesheet" />
   </head>
 
   <body onload="tampilInput()">
     <nav>
-      <div class="logo">KELOMPOK 2C</div>
+      <div class="logo">KMB</div>
       <ul>
-        <li><a href="#d">Definisi</a></li>
-        <li><a href="#k">Kalkulator</a></li>
-        <li><a href="#t">Tentang kami</a></li>
+        <li><a href="#definisi">Definisi</a></li>
+        <li><a href="#kalkulator">Kalkulator</a></li>
+        <li><a href="#tentang">Tentang kami</a></li>
       </ul>
     </nav>
-    <main>
-      <div class="definisi" id="d">
-        <h1>Kalkulator</h1>
-        <h3>Metode Biseksi</h3>
-        <p class="d">Metode Biseksi (Bisection method) adalah suatu metode yang digunakan untuk mencari akar dari suatu persamaan. Kalkulator Metode Biseksi dapat membantu dalam perhitungan Metode Biseksi.</p>
-        <h4>How to Use?</h4>
-        <p class="l">
-          1. Masukkan input yang diperlukan untuk menghitung metode biseksi. <br />
-          2. Klik ‘CALCULATE” untuk melakukan perhitungan, dan klik ‘CLEAR’ apabila ingin menghapus semua input yang sudah dimasukkan. <br />
-          3. Hasil akan muncul tepat dibawah kalkulator. <br />
+
+    <main id="definisi">
+      <div class="definisi">
+        <h1>
+          Kalkulator - <br />
+          <span class="sub-head">Metode Biseksi</span>
+        </h1>
+        <p>
+          Metode biseksi adalah salah satu metode numerik yang digunakan untuk menemukan akar dari suatu fungsi matematika. Tujuan dari metode ini adalah untuk mencari nilai akar dari suatu fungsi yang terletak di antara dua titik yang
+          diberikan. Metode ini bekerja dengan cara membagi interval yang mengandung akar menjadi dua bagian yang sama besar, lalu memeriksa di mana akar berada, apakah di bagian kiri atau kanan interval tersebut. Proses ini terus diulang
+          hingga ditemukan nilai perkiraan yang memenuhi batasan toleransi yang ditetapkan.
         </p>
+        <section class="SecHowToUse">
+          <h2>How to Use?</h2>
+          <ol class="list">
+            <li>Isi semua kolom input yang diperlukan</li>
+            <li>Klik tombol "Hitung" untuk melakukan perhitungan</li>
+            <li>Tabel hasil akan muncul tepat dibawah kalkulator dan di samping kalkulator akan tampil grafik dari nilai f(x)</li>
+            <li>Klik tombol "Hapus" untuk menghapus semua <i>input</i>-an yang telah dimasukkan</li>
+          </ol>
+        </section>
       </div>
 
       <!-- Section Kalkulator -->
-      <div class="wrapper" id="k">
+      <div class="wrapper" id="kalkulator">
         <div class="sec-kalkulator">
           <h4 class="title-calculate">KALKULATOR</h4>
           <p class="h2">Masukan Input yang diperlukan.</p>
           <!-- Form Kalkulator -->
-          <form id="kalkulator">
+          <form id="kalkulator" onsubmit="event.preventDefault(); tampil();">
             <!-- Input pilih pangkat tertinggi -->
             <div class="form-group">
               <div class="label-control">
@@ -83,30 +94,32 @@
               </div>
               <input type="text" class="input-control" id="error" required />
             </div>
+
+            <div class="btn-group">
+              <div class="btn-calculate">
+                <button type="submit" class="btn-control" id="hitung">Hitung</button>
+              </div>
+
+              <div class="btn-delete">
+                <button class="btn-control" type="reset">Hapus</button>
+              </div>
+            </div>
           </form>
-
-          <div class="btn-group">
-            <div class="btn-calculate">
-              <button class="btn-control" id="hitung" onclick="tampil()">Hitung</button>
-            </div>
-
-            <div class="btn-delete">
-              <button class="btn-control" onclick="resetForm()">Hapus</button>
-            </div>
-          </div>
         </div>
+
         <div class="graph">
           <canvas id="chart"></canvas>
+          <center>Grafik perhitungan nilai f(x)</center>
         </div>
       </div>
-      <section>
-        <h2>Tabel Hasil</h2>
+      <section class="secTabelHasil">
+        <h2><center>Tabel Hasil</center></h2>
         <div class="tb-hasil" id="tabel"></div>
       </section>
     </main>
     <section class="about-us">
       <div class="t">
-        <h2 class="title-t" id="t">Tentang Kami</h2>
+        <h2 class="title-t" id="tentang">Tentang Kami</h2>
         <p class="deskripsi-t">
           Bisection method calculator atau kalkulator metode biseksi ini merupakan sebuah tugas project yang dikerjakan oleh kelompok 2 Kelas C Program Studi Informatika Universitas Siliwangi angkatan 2022. Berikut merupakan anggota
           kelompok yang berkontribusi pada pengerjaan project ini :

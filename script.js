@@ -108,17 +108,17 @@ function resetForm() {
 
 function buatTabel(hasil) {
   let table = '<table class="tb-group">';
-  table += `<tr class="tr-control"> <th class="th-control">Iterasi</th> <th class="th-control">a</th> <th class="th-control">b</th> <th class="th-control">x</th> <th class="th-control">f(a)</th> <th class="th-control">f(b)</th> <th class="th-control">f(x)</th> </tr>`;
+  table += `<tr class="tr-control"> <th>Iterasi</th> <th>a</th> <th>b</th> <th>x</th> <th>f(a)</th> <th>f(b)</th> <th>f(x)</th> </tr>`;
 
   hasil.forEach((element, index) => {
     table += `<tr class="tr-control-2">
-        <td class="th-control">${index + 1}</td>
-        <td class="th-control">${element.a}</td>
-        <td class="th-control">${element.b}</td>
-        <td class="th-control">${element.x}</td>
-        <td class="th-control">${element.fa}</td>
-        <td class="th-control">${element.fb}</td>
-        <td class="th-control">${element.fx}</td>
+        <td>${index + 1}</td>
+        <td>${element.a}</td>
+        <td>${element.b}</td>
+        <td>${element.x}</td>
+        <td>${element.fa}</td>
+        <td>${element.fb}</td>
+        <td>${element.fx}</td>
     </tr>`;
   });
 
